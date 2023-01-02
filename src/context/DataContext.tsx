@@ -1,6 +1,6 @@
 import * as React from "react";
 
-type DataContextType = {
+export type DataContextType = {
   riddles: string[];
   jokes: string[];
   fetchRiddles: () => void;

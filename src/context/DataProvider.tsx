@@ -1,5 +1,18 @@
 import * as React from "react";
-import DataContext, { DataContextType } from "./DataContext";
+
+export type DataContextType = {
+  riddles: string[];
+  jokes: string[];
+  fetchRiddles: () => void;
+  fetchJokes: () => void;
+};
+
+export const DataContext = React.createContext<DataContextType>({
+  riddles: [],
+  jokes: [],
+  fetchRiddles: () => {},
+  fetchJokes: () => {},
+});
 
 type DataProviderProps = {
   children: React.ReactNode;   // need to learn more about ReactNode later on

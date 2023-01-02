@@ -1,8 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { generateResponse } from "./responseGenerator";
 import { HideShowButtons, ButtonsProps } from "./HideShowButtons";
-import DataProvider from "..//context/DataProvider";
-import DataContext from "..//context/DataContext";
+import {DataContext, DataProvider} from "..//context/DataProvider";
 
 interface IBot {
   greeting: string;
@@ -20,7 +19,7 @@ export const Bot = ({ greeting }: IBot) => {
       await fetchRiddles();
       if (riddles.length > 0) {
         setConversation([
-          <>
+          <div>
             {riddles[0].title}
             <br />
             <br />
@@ -28,7 +27,7 @@ export const Bot = ({ greeting }: IBot) => {
             <br />
             <br />
             {riddles[0].answer}
-          </>,
+          </div>,
         ]);
         console.log(riddles);
       } else {
@@ -47,7 +46,7 @@ export const Bot = ({ greeting }: IBot) => {
     try {
       await fetchJokes();
       if (jokes.length > 0) {
-        setConversation([<>{jokes[0].joke}</>]);
+        setConversation([<div>{jokes[0].joke}</div>]);
         console.log(jokes);
       } else {
         // handle case where jokes array is empty

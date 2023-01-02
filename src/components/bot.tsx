@@ -14,7 +14,7 @@ export const Bot = ({ greeting }: IBot) => {
   const [visibility, setVisibility] = useState<boolean>(false);
   const { riddles, jokes, fetchRiddles, fetchJokes } = useContext(DataContext);
 
-  const onRiddleRequest = async () => {
+  const onRiddleRequest = async <string>() => {
     try {
       await fetchRiddles();
       if (riddles.length > 0) {
@@ -82,7 +82,7 @@ export const Bot = ({ greeting }: IBot) => {
             setTimeout(() => {
               setConversation([
                 ...conversation,
-                `${greeting} ${message}, What can I help you with ?`,
+                `${greeting} ${message}, What can I help you with. Alternatively, type 'hints' for some available services.  ?`,
               ]);
             }, 3000);
             setMessage("");

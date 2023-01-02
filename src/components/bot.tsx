@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { generateResponse } from "./responseGenerator";
-import { HideShowButtons, ButtonProps } from "./HideShowButtons";
+import { HideShowButtons, ButtonsProps } from "./HideShowButtons";
 import DataProvider from "..//context/DataProvider";
 import DataContext from "..//context/DataContext";
 

@@ -20,7 +20,7 @@ export const Bot = ({ greeting }: IBot) => {
     await fetchRiddles();
     if (riddles.length > 0) {
       setConversation([
-        ` Title : ${riddles[0].title} \n\n
+        ` This riddle Title is : ${riddles[0].title} 
           , and the riddle is : ${riddles[0].question}
           , the answer is :${riddles[0].answer} `
       ]);

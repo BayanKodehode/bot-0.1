@@ -21,8 +21,8 @@ export const Bot = ({ greeting }: IBot) => {
     if (riddles.length > 0) {
       setConversation([
         ` This riddle Title is : ${riddles[0].title} 
-          , and the riddle is : ${riddles[0].question}
-          , the answer is :${riddles[0].answer} `
+          . The riddle is : ${riddles[0].question}
+          . The answer is :${riddles[0].answer} `
       ]);
       console.log(riddles);
     } else {

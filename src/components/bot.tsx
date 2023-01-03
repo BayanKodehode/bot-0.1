@@ -26,8 +26,6 @@ export const Bot = ({ greeting }: IBot) => {
       ]);
       console.log(riddles);
     } else {
-      // handle case where riddles array is empty
-      // need to find a solution to this later
       setConversation([
         "Sorry, but don't give up! Keep trying and maybe you'll get lucky.",
       ]);
@@ -44,8 +42,6 @@ const onJokeRequest = async () => {
       setConversation([`${jokes[0].joke}`]);
       console.log(jokes);
     } else {
-      // handle case where jokes array is empty
-      // need to find a solution to this later
       setConversation([
         "Don't worry though, just click again and maybe I'll have a joke for you next time!",
       ]);

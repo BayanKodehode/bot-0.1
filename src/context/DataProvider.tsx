@@ -73,5 +73,3 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// A hook to make it easier to access the context data within a component
-export const useData = () => useContext(DataContext);

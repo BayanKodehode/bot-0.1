@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { generateResponse } from "./responseGenerator";
 import { HideShowButtons, ButtonsProps } from "./HideShowButtons";
-import {DataContext, DataProvider} from "..//context/DataProvider";
+import { DataContext } from "..//context/DataProvider";
 
 interface IBot {
   greeting: string;
@@ -14,12 +14,12 @@ export const Bot = ({ greeting }: IBot) => {
   const [visibility, setVisibility] = useState<boolean>(false);
   const { riddles, jokes, fetchRiddles, fetchJokes } = useContext(DataContext);
 
-  const onRiddleRequest = async <string>() => {
+  const onRiddleRequest = async () => {
     try {
       await fetchRiddles();
       if (riddles.length > 0) {
         setConversation([
-          <div>
+          <>
             {riddles[0].title}
             <br />
             <br />
@@ -27,7 +27,7 @@ export const Bot = ({ greeting }: IBot) => {
             <br />
             <br />
             {riddles[0].answer}
-          </div>,
+          </>,
         ]);
         console.log(riddles);
       } else {
@@ -46,7 +46,7 @@ export const Bot = ({ greeting }: IBot) => {
     try {
       await fetchJokes();
       if (jokes.length > 0) {
-        setConversation([<div>{jokes[0].joke}</div>]);
+        setConversation([<>{jokes[0].joke}</>]);
         console.log(jokes);
       } else {
         // handle case where jokes array is empty
